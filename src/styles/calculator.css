@@ -1,6 +1,7 @@
 .calc-container {
   min-height: 400px;
   min-width: 300px;
-  display: grid;
   background-color: pink;
+  display: grid;
+  grid-template-rows: 70px auto;
 }

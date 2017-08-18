@@ -1,0 +1,23 @@
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 2px 5px;
+}
+
+.calc-btn {
+  min-height: 4rem;
+  border: 1px solid black;
+}
+
+.calc-btn:nth-child(16) {
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.calc-btn:nth-child(17) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}

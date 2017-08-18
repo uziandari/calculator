@@ -1,14 +1,14 @@
 import React from 'react';
 
-import '../styles/result.css'
+import '../styles/calculatorInput.css'
 
 const CalcButtons = (props) => {
 
   const buttonRow = props.inputButtons.map((calcButtonRow) => {
     return calcButtonRow.map((calcButton, index) => {
       return (
-        <div key={index} className="button-row-container">
-          <button className="calc-button" >{calcButton}</button>
+        <div key={index} className="calc-btn">
+          <button onClick={() => props.handleButtonInput(calcButton)}>{calcButton}</button>
         </div>
       )
     });
