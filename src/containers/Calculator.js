@@ -11,7 +11,7 @@ export default class Calculator extends Component {
     this.state = {
       result: 0,
       inputButtons: [
-        ['C', 'CE', '/', '*'],
+        ['C', '<-', '/', '*'],
         [7, 8, 9, '-'],
         [4, 5, 6, '+'],
         [1, 2, 3, '='],
@@ -24,14 +24,19 @@ export default class Calculator extends Component {
 
   handleClick(input) {
     console.log(`pressed ${input}`);
-    if (['C', 'CE', '='].includes(input)) {
-      console.log('final operation.')
+    if (['C', '='].includes(input)) {
+      console.log(this.state.operations);
+    } else if (input === '<-') {
+      let arr = this.state.operations;
+      arr.splice(-1, 1);
+      this.setState({
+        operations: arr
+      });
     } else {
       this.setState({
         operations: [...this.state.operations, input]
-      })
+      });
     }
-    console.log(this.state.operations)
   }
 
   render() {
