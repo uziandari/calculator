@@ -26,7 +26,12 @@ export default class Calculator extends Component {
     console.log(`pressed ${input}`);
     if (['C', '='].includes(input)) {
       console.log(this.state.operations);
-    } else if (input === '<-') {
+      /*
+
+        handle input
+
+      */
+    } else if (input === '<-') { //delete last entry
       let arr = this.state.operations;
       arr.splice(-1, 1);
       this.setState({
@@ -42,7 +47,7 @@ export default class Calculator extends Component {
   render() {
     return (
       <div className="calc-container">
-        <ResultDisplay result={this.state.result} />
+        <ResultDisplay result={this.state.result} operations={this.state.operations} />
         <CalcButtons inputButtons={this.state.inputButtons} handleButtonInput={this.handleClick}/>
       </div>
     );

@@ -4,4 +4,6 @@
   background-color: pink;
   display: grid;
   grid-template-rows: 70px auto;
+  padding: 0;
+  margin: 0;
 }

@@ -5,7 +5,8 @@ import '../styles/result.css'
 const ResultDisplay = (props) => {
   return (
     <div className="result-container">
-      <h2>{props.result}</h2>
+      <h2 className="result-num">{props.result}</h2>
+      <p className="input-all">{props.operations}</p>
     </div>
   );
 }
