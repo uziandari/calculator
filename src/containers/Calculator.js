@@ -23,24 +23,23 @@ export default class Calculator extends Component {
   }
 
   handleClick(input) {
-    console.log(`pressed ${input}`);
-    if (['C', '='].includes(input)) {
-      console.log(this.state.operations);
-      /*
-
-        handle input
-
-      */
-    } else if (input === '<-') { //delete last entry
-      let arr = this.state.operations;
-      arr.splice(-1, 1);
-      this.setState({
-        operations: arr
-      });
-    } else {
-      this.setState({
-        operations: [...this.state.operations, input]
-      });
+    switch(input) {
+      case 'C':
+        return this.setState({
+          operations: []
+        });
+        break;
+      case '<-':
+        let arr = this.state.operations;
+        arr.splice(-1, 1);
+        this.setState({
+          operations: arr
+        });
+        break;
+      default:
+        this.setState({
+          operations: [...this.state.operations, input]
+        });
     }
   }
 
