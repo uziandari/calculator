@@ -42,6 +42,13 @@ export default class Calculator extends Component {
         let equation = this.state.operations.join('');
         try {
           let mathResult = math.eval(equation);
+          if (mathResult.toString().length > 18) {
+            console.log(mathResult)
+            this.setState({
+              result: 'Number Limit'
+            });
+            break;
+          }
           this.setState({
             result: mathResult
           });
