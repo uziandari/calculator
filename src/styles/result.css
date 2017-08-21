@@ -1,5 +1,5 @@
 .result-container {
-  background-color: rgba(45, 45, 45, 0.4);
+  background-color: #ECC12D;
   overflow: hidden;
   text-align: right;
   padding: 0;
@@ -7,16 +7,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border-radius: 5px 5px 0 0;
 }
 
 .result-container h2 {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 2em;
+  color: #F3F6F5;
   margin: 5px 10px 0 0;
   padding: 0;
 }
 
 .result-container p {
-  margin: 0 5px 5px 0;
+  margin: -5px 5px 8px 0;
   padding: 0 5px;
 }

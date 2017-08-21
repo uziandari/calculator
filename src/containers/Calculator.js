@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import math from 'mathjs';
 
 import ResultDisplay from '../components/ResultDisplay';
 import CalcButtons from '../components/CalcButtons';
@@ -26,7 +27,8 @@ export default class Calculator extends Component {
     switch(input) {
       case 'C':
         return this.setState({
-          operations: []
+          operations: [],
+          result: 0
         });
         break;
       case '<-':
@@ -35,6 +37,21 @@ export default class Calculator extends Component {
         this.setState({
           operations: arr
         });
+        break;
+      case '=':
+        let equation = this.state.operations.join('');
+        try {
+          let mathResult = math.eval(equation);
+          this.setState({
+            result: mathResult
+          });
+        }
+        catch(err) {
+          console.log(err);
+          this.setState({
+            result: 'ERR'
+          });
+        }
         break;
       default:
         this.setState({

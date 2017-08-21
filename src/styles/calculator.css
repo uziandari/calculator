@@ -1,7 +1,8 @@
 .calc-container {
   min-height: 400px;
   min-width: 300px;
-  background-color: pink;
+  border-radius: 5px;
+  background-color: #F3F6F5;
   display: grid;
   grid-template-rows: 70px auto;
   padding: 0;
