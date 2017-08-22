@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import math from 'mathjs';
 
 import ResultDisplay from '../components/ResultDisplay';
 import CalcButtons from '../components/CalcButtons';
@@ -41,11 +40,11 @@ export default class Calculator extends Component {
       case '=':
         let equation = this.state.operations.join('');
         try {
-          let mathResult = math.eval(equation);
+          let mathResult = eval(equation);
           if (mathResult.toString().length > 18) {
             console.log(mathResult)
             this.setState({
-              result: 'Number Limit'
+              result: 'Too Long'
             });
             break;
           }

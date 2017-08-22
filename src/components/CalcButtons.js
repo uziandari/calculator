@@ -7,7 +7,7 @@ const CalcButtons = (props) => {
   const buttonRow = props.inputButtons.map((calcButtonRow) => {
     return calcButtonRow.map((calcButton, index) => {
       return (
-        <button  key={index} className="calc-btn" className="calc-btn" onClick={() => props.handleButtonInput(calcButton)}>{calcButton}</button>
+        <button key={index} className="calc-btn" className="calc-btn" onClick={() => props.handleButtonInput(calcButton)}>{calcButton}</button>
       )
     });
   })
